@@ -3,6 +3,7 @@ from pathlib import Path
 from ..utilities.utils import max_items_int
 from ..utilities.utils import max_lines_int
 
+
 def parse_args() -> argparse.Namespace:
     """
     Parse command-line arguments for the gitree tool.
@@ -62,6 +63,12 @@ def parse_args() -> argparse.Namespace:
         type=max_lines_int,
         default=argparse.SUPPRESS,
         help="Limit lines shown in the tree output",
+    )
+    ap.add_argument(
+        "--no-max-lines",
+        action="store_true",
+        default=argparse.SUPPRESS,
+        help="Disable max lines limit",
     )
     basic.add_argument(
         "--config-user",
